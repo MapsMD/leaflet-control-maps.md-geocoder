@@ -102,3 +102,6 @@
 .leaflet-control-geocoder-address-context {
 	color: #666;
 }
+.leaflet-control-geocoder-address-name {
+	font-weight: bold;
+}

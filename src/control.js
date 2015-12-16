@@ -1,5 +1,6 @@
 var L = require('leaflet'),
-	Nominatim = require('./geocoders/nominatim').class;
+	//Nominatim = require('./geocoders/nominatim').class;
+	Geocoacher = require('./geocoders/geocoacher').class;
 
 module.exports = {
 	class: L.Control.extend({
@@ -7,7 +8,7 @@ module.exports = {
 			showResultIcons: false,
 			collapsed: true,
 			expand: 'click',
-			position: 'topright',
+			position: 'topleft',
 			placeholder: 'Search...',
 			errorMessage: 'Nothing found.'
 		},
@@ -17,7 +18,8 @@ module.exports = {
 		initialize: function (options) {
 			L.Util.setOptions(this, options);
 			if (!this.options.geocoder) {
-				this.options.geocoder = new Nominatim();
+				//this.options.geocoder = new Nominatim();
+				this.options.geocoder = new Geocoacher();
 			}
 		},
 
